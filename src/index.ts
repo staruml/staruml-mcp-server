@@ -99,6 +99,32 @@ server.tool(
   }
 );
 
+server.tool(
+  "get_diagram_image_by_id",
+  "Get the image of a diagram by its ID in StarUML.",
+  {
+    diagramId: z
+      .string()
+      .describe(
+        "ID of the diagram to get the image for. You can get the ID from the 'get_all_diagrams_info' tool."
+      ),
+  },
+  async ({ diagramId }) => {
+    try {
+      const image = await api(apiPort, "/get_diagram_image_by_id", {
+        diagramId,
+      });
+      return response.image("image/png", image);
+    } catch (error) {
+      console.error(error);
+      return response.error(
+        JsonRpcErrorCode.InternalError,
+        `Failed to get diagram image by id: ${error instanceof Error ? error.message : String(error)}`
+      );
+    }
+  }
+);
+
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
