@@ -32,7 +32,7 @@ You can use the `--api-port=<port>` option to change the API server port for Sta
 
 ## Tools
 
-- `create_diagram`
+- `generate_diagram`
 - `get_current_diagram_info`
 - `get_all_diagrams_info`
 - `get_diagram_image_by_id`

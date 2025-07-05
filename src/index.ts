@@ -59,6 +59,46 @@ server.tool(
   }
 );
 
+server.tool(
+  "get_all_diagrams_info",
+  "Get information for all diagrams in StarUML.",
+  {},
+  async ({}) => {
+    try {
+      const data = await api(apiPort, "/get_all_diagrams_info", {});
+      return response.text(`All diagrams: ${JSON.stringify(data)}`);
+    } catch (error) {
+      console.error(error);
+      return response.error(
+        JsonRpcErrorCode.InternalError,
+        `Failed to get all diagrams info: ${error instanceof Error ? error.message : String(error)}`
+      );
+    }
+  }
+);
+
+server.tool(
+  "get_current_diagram_info",
+  "Get information for the current diagram in StarUML.",
+  {},
+  async ({}) => {
+    try {
+      const data = await api(apiPort, "/get_current_diagram_info", {});
+      if (data) {
+        return response.text(`Current diagram: ${JSON.stringify(data)}`);
+      } else {
+        return response.text("No current diagram found.");
+      }
+    } catch (error) {
+      console.error(error);
+      return response.error(
+        JsonRpcErrorCode.InternalError,
+        `Failed to get current diagram info: ${error instanceof Error ? error.message : String(error)}`
+      );
+    }
+  }
+);
+
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
