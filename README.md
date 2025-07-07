@@ -26,9 +26,9 @@ You can use the `--api-port=<port>` option to change the API server port for Sta
 
 ## Example Prompts
 
-- _"Create a class diagram in StarUML"_
-- _"Create a login sequence diagram in StarUML"_
-- _"Generate SQL DDL from the ERD in StarUML"_
+- _"Create a class diagram for book store in StarUML"_
+- _"Create a sequence diagram for OAuth authentication in StarUML"_
+- _"Generate SQL DDL from the current ERD diagram in StarUML"_
 
 ## Tools
 
