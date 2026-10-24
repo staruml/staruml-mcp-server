@@ -1,4 +1,4 @@
-[![smithery badge](https://smithery.ai/badge/@staruml/staruml-mcp-server)](https://smithery.ai/server/@staruml/staruml-mcp-server)
+[![LightNow capabilities](https://lightnow.ai/badge/io.github.staruml/staruml-mcp-server)](https://lightnow.ai/servers/io.github.staruml/staruml-mcp-server)
 
 # StarUML MCP Server
 
