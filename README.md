@@ -13,7 +13,7 @@ Use the version of StarUML MCP Server matching your StarUML:
 
 | StarUML | StarUML MCP Server |
 | ------- | ------------------ |
-| `v8`    | `0.2.0`            |
+| `v8`    | `0.2.x` (latest)   |
 | `v7`    | `0.1.0`            |
 
 Set up `claude_desktop_config.json` in Claude Desktop as follows:
@@ -23,13 +23,15 @@ Set up `claude_desktop_config.json` in Claude Desktop as follows:
   "mcpServers": {
     "staruml-mcp-server": {
       "command": "npx",
-      "args": ["-y", "staruml-mcp-server@0.2.0"]
+      "args": ["-y", "staruml-mcp-server"]
     }
   }
 }
 ```
 
-For StarUML `v7`, use `staruml-mcp-server@0.1.0` instead.
+For StarUML `v7`, use `staruml-mcp-server@0.1.0` instead of `staruml-mcp-server`.
+
+If StarUML `v8` returns 401 errors, an older version may be cached by npx. Use `staruml-mcp-server@latest` once or clear `~/.npm/_npx`.
 
 You can use the `--api-port=<port>` option to change the API server port for StarUML.
 
