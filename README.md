@@ -9,6 +9,13 @@ Prerequisite:
 - [StarUML](https://staruml.io/) `v7.0.0` or higher
 - [Node.js](https://nodejs.org/) `v22` or higher
 
+Use the version of StarUML MCP Server matching your StarUML:
+
+| StarUML | StarUML MCP Server |
+| ------- | ------------------ |
+| `v8`    | `0.2.0`            |
+| `v7`    | `0.1.0`            |
+
 Set up `claude_desktop_config.json` in Claude Desktop as follows:
 
 ```json
@@ -16,15 +23,17 @@ Set up `claude_desktop_config.json` in Claude Desktop as follows:
   "mcpServers": {
     "staruml-mcp-server": {
       "command": "npx",
-      "args": ["-y", "staruml-mcp-server"]
+      "args": ["-y", "staruml-mcp-server@0.2.0"]
     }
   }
 }
 ```
 
+For StarUML `v7`, use `staruml-mcp-server@0.1.0` instead.
+
 You can use the `--api-port=<port>` option to change the API server port for StarUML.
 
-When the MCP server calls StarUML for the first time, StarUML asks you to allow API access for "StarUML MCP Server". Click **Allow** to continue. The access is kept until StarUML is restarted, and StarUML asks again after a restart. (StarUML `v7` does not ask.)
+With StarUML `v8`, when the MCP server calls StarUML for the first time, StarUML asks you to allow API access for "StarUML MCP Server". Click **Allow** to continue. The access is kept until StarUML is restarted, and StarUML asks again after a restart.
 
 ## Example Prompts
 
