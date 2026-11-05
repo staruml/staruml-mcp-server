@@ -26,6 +26,8 @@ Set up `claude_desktop_config.json` in Claude Desktop as follows:
 
 You can use the `--api-port=<port>` option to change the API server port for StarUML.
 
+When the MCP server calls StarUML for the first time, StarUML asks you to allow API access for "StarUML MCP Server". Click **Allow** to continue. The access is kept until StarUML is restarted, and StarUML asks again after a restart. (StarUML `v7` does not ask.)
+
 ## Example Prompts
 
 - _"Create a class diagram for book store in StarUML"_
